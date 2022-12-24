@@ -1,0 +1,18 @@
+{
+    "name": "michaelthedev/workershifts",
+    "description": "Teamway builder assignment. (Build a REST application from scratch that could serve as a work planning service)",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Michaelthedev\\Workershifts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael A.",
+            "email": "michael@logad.net"
+        }
+    ]
+}

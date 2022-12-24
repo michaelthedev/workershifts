@@ -1,0 +1,1 @@
+{"version":1,"defects":{"WorkerTest::testClassConstructor":3,"WorkerTest::testGetShifts":3,"WorkerTest::testGetWorkShifts":3},"times":{"WorkerTest::testClassConstructor":0.021,"WorkerTest::testGetShifts":0,"WorkerTest::testGetWorkShifts":0.019}}
