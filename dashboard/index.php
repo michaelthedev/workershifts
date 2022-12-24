@@ -346,7 +346,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <input type="date" class="form-control" name="start_date"/>
                                     </div>
                                     <div class="mb-5">
-                                        <label class="form-label">Shift Time</label>
+                                        <label class="form-label">Shift Time slot</label>
                                         <select name="start_time" class="form-select">
                                             <option value="0:00">0 - 8</option>
                                             <option value="8:00">8 - 16</option>

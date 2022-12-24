@@ -62,6 +62,12 @@ class Admin {
 		]);
 	}
 
+	public function getAllWorkShifts(): array {
+		return (new DB('workers_shifts'))->customQuery([
+			'query' => 'SELECT * FROM workers_shifts ORDER BY id DESC',
+		]);
+	}
+
 	## Total number of workers ##
 	public function getTotalWorkers(): int {
 		return (new DB('workers'))->customQuery([
@@ -104,9 +110,4 @@ class Admin {
 		])->total_hours ?? 0;
 	}
 
-	public function getAllWorkShifts(): array {
-		return (new DB('workers_shifts'))->customQuery([
-			'query' => 'SELECT * FROM workers_shifts ORDER BY id DESC',
-		]);
-	}
 }
