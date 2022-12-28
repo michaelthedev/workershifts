@@ -43,7 +43,7 @@ class Worker {
 				"end_time" => strtotime('+'.Helper::workShiftDuration. ' hours', $startTimeUnix),
 				"date" => time()
 			])->insert();
-			return ['status' => 'success', 'data' => $workShiftID];
+			return ['status' => 'success', 'message' => 'Work shift created successfully', 'worker_id' => $this->worker_id, 'data' => $workShiftID];
 		}
 		catch (\Exception $e) {
 			return ['status' => 'error', 'message' => $e->getMessage()];
@@ -88,6 +88,16 @@ class Worker {
 			'singleRecord' => true
 		]);
 		if (!empty($shift)) return true;
+		return false;
+	}
+
+	public function exists(): bool {
+		$worker = (new DB('workers'))->customQuery([
+			'query' => "SELECT worker_id FROM workers WHERE worker_id = ?",
+			'values' => [$this->worker_id],
+			'singleRecord' => true
+		]);
+		if (!empty($worker)) return true;
 		return false;
 	}
 }

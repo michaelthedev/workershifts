@@ -87,7 +87,7 @@ class Admin {
 				"date" => time()
 			])->insert();
 
-			return ['status' => 'success', 'message' => 'Worker added successfully'];
+			return ['status' => 'success', 'message' => 'Worker added successfully', 'worker_id' => $workerID];
 		}
 		catch (Exception $e) {
 			return ['status' => 'error', 'message' => $e->getMessage()];

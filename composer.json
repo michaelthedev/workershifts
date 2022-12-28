@@ -14,5 +14,9 @@
             "name": "Michael A.",
             "email": "michael@logad.net"
         }
-    ]
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6"
+    }
 }

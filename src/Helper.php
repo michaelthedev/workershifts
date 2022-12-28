@@ -14,7 +14,7 @@ class Helper {
 
 	public static function workDateIsValid($date): bool {
 		$dt = DateTime::createFromFormat("Y-m-d", $date);
-		return $dt !== false && !array_sum($dt::getLastErrors());
+		return $dt !== false && !array_sum((empty($dt::getLastErrors()) ? [] : $dt::getLastErrors()));
 	}
 
 	public static function formatTimeStamp($timestamp, $format = 'd M, Y'): string
