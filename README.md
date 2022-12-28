@@ -1,6 +1,9 @@
 # workershifts
 Teamway builder assignment. (Build a REST application from scratch that could serve as a work planning service)
 
+## API documentation
+https://documenter.getpostman.com/view/10657913/2s8Z6x4Zd9
+
 ## Your assignment
 Build a REST application from scratch that could serve as a work planning service.
 
