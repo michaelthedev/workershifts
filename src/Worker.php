@@ -28,8 +28,7 @@ class Worker {
 		}
 
 		// Check if already has shift same date
-		$lastShift = $this->getLastWorkShift();
-		if (date('Y-m-d', $lastShift->start_time) == $date) {
+		if ($this->isShiftConflict($date)) {
 			return ['status' => 'error', 'message' => 'Worker already has a shift on selected date'];
 		}
 
@@ -80,5 +79,15 @@ class Worker {
 			'values' => [$this->worker_id],
 			'singleRecord' => true
 		]);
+	}
+
+	public function isShiftConflict($date): bool {
+		$shift = (new DB('workers_shifts'))->customQuery([
+			'query' => "SELECT id FROM workers_shifts WHERE worker_id = ? AND DATE(FROM_UNIXTIME(date)) = ?",
+			'values' => [$this->worker_id, $date],
+			'singleRecord' => true
+		]);
+		if (!empty($shift)) return true;
+		return false;
 	}
 }
